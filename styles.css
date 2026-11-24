@@ -1,0 +1,294 @@
+/* ===== CSS variables (color palette) ===== */
+:root {
+  --blush: #f8ecec;
+  --rose: #ead8e1;
+  --red: #db2d2d;
+  --red-dark: #b81f1f;
+  --white: #fbf6f5;
+  --black: #1a1a1a;
+}
+
+/* ===== General ===== */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Jost", Arial, sans-serif;
+  font-weight: 300;
+  color: var(--black);
+  background-color: var(--blush);
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-family: "Italiana", Georgia, serif;
+  font-weight: normal;
+  color: var(--red);
+}
+
+h1 {
+  font-size: 6.5rem;
+  line-height: 0.95;
+  margin: 0;
+}
+
+h2 {
+  font-size: 3.2rem;
+  margin: 0 0 30px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 1.1rem;
+  margin: 12px 0 6px;
+}
+
+p {
+  line-height: 1.9;
+}
+
+strong {
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s, background-color 0.3s, transform 0.3s;
+}
+
+/* dotted divider */
+hr {
+  border: none;
+  border-top: dotted var(--red) 6px;
+  width: 4%;
+  margin: 80px auto;
+}
+
+/* ===== Top section ===== */
+.top-container {
+  max-width: 1100px;
+  margin: 20px auto 0;
+  padding: 0 40px 60px;
+  border: 2px solid var(--white);
+  border-radius: 30px;
+}
+
+/* Navbar – Flexbox */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.logo {
+  font-family: "Italiana", Georgia, serif;
+  font-size: 1.8rem;
+  color: var(--red);
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: var(--black);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+.nav-links a:hover {
+  color: var(--red);
+}
+
+/* Hero – Flexbox: text on the left, picture on the right */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding-top: 40px;
+}
+
+.title-text {
+  position: relative;
+  text-align: left;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  margin: 25px 0 35px;
+}
+
+/* sparkle – @keyframes animation */
+.sparkle {
+  width: 30px;
+  vertical-align: top;
+  margin-left: 6px;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%   { transform: scale(1) rotate(0deg); }
+  50%  { transform: scale(1.4) rotate(45deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+#avatar {
+  width: 340px;
+  border-radius: 24px;
+  transition: transform 0.4s;
+}
+
+#avatar:hover {
+  transform: rotate(-3deg) scale(1.03);
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background-color: var(--red);
+  color: var(--white);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  padding: 12px 34px;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: var(--red-dark);
+  transform: scale(1.05);
+}
+
+/* ===== Middle section ===== */
+.middle-container {
+  margin: 90px auto;
+  width: 90%;
+  max-width: 900px;
+}
+
+.intro {
+  max-width: 520px;
+  margin: auto;
+  font-size: 1.05rem;
+}
+
+/* Skills – Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--rose);
+  border-radius: 24px;
+  padding: 30px 25px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(219, 45, 45, 0.12);
+}
+
+.card img {
+  width: 85px;
+}
+
+.card p {
+  margin: 0;
+}
+
+/* Contact */
+.contact-message {
+  max-width: 460px;
+  margin: 0 auto 40px;
+}
+
+/* ===== Footer ===== */
+.bottom-container {
+  background-color: var(--red);
+  padding: 40px 0 15px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.footer-link {
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
+.footer-link:hover {
+  color: var(--black);
+}
+
+/* links that open in a new tab */
+a[target="_blank"] {
+  font-weight: 500;
+}
+
+.copyright {
+  color: var(--rose);
+  font-size: 0.85rem;
+}
+
+/* ===== Responsive – Media query ===== */
+@media (max-width: 768px) {
+  .top-container {
+    margin: 10px;
+    padding: 0 20px 40px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero {
+    flex-direction: column-reverse;
+    padding-top: 20px;
+  }
+
+  .title-text {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 4.2rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  .sparkle {
+    display: none;
+  }
+
+  #avatar {
+    width: 220px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  hr {
+    width: 15%;
+    margin: 60px auto;
+  }
+}
